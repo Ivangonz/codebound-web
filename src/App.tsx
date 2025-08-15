@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="min-h-screen grid gap-4 justify-center content-center bg-gradient-to-bl from-indigo-300 to-purple-900  text-center">
+      <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-500 to-rose-700 mb-4">
+        Vite + React + TS + Tailwind
+      </h1>
+      <div className="grid gap-4 grid-cols-3">
+        <button
+          onClick={() => setCount((p) => p + 1)}
+          className="px-6 py-2 bg-indigo-600 hover:bg-indigo-800 text-white font-medium rounded"
+        >
+          +1
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button
+          onClick={() => setCount(0)}
+          className="px-6 py-2 bg-indigo-600 hover:bg-indigo-800 text-white font-medium rounded"
+        >
+          Reset
+        </button>
+        <button
+          onClick={() => setCount((p) => p - 1)}
+          className="px-6 py-2 bg-indigo-600 hover:bg-indigo-800 text-white font-medium rounded"
+        >
+          -1
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <p className="text-lg text-white">Count: {count}</p>
+    </div>
+  );
 }
 
-export default App
+export default App;
